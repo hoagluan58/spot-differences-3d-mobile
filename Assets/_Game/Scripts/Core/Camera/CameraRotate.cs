@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class CameraRotate : MonoBehaviour
 {
@@ -82,7 +81,7 @@ public class CameraRotate : MonoBehaviour
     private Vector2 HandleTouch()
     {
         var drag = Vector2.zero;
-        if (Input.touchCount > 0 &&
+        if (Input.touchCount == 1 &&
               Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             Touch t = Input.GetTouch(0);

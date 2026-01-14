@@ -1745,6 +1745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426786718}
   - component: {fileID: 1426786719}
+  - component: {fileID: 1426786720}
   m_Layer: 0
   m_Name: CameraSystem
   m_TagString: Untagged
@@ -1786,6 +1787,22 @@ MonoBehaviour:
   rotateSpeed: 0.2
   minPitch: 0
   maxPitch: 360
+--- !u!114 &1426786720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426786717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6572b6eb94a5b9d43a340fde43e3c072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameras: []
+  zoomSpeed: 10
+  minFOV: 2
+  maxFOV: 20
 --- !u!1 &1503864162
 GameObject:
   m_ObjectHideFlags: 0
