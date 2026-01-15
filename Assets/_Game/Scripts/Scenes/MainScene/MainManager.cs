@@ -8,7 +8,12 @@ namespace SpotDifferences
         private async void Start()
         {
             var loadingUI = UIManager.OpenResources<LoadingUI>(UIDefine.LOADING_UI);
-            UIManager.OpenResources(UIDefine.HOME_MENU_UI);
+
+            loadingUI.SetStartButtonAction(() =>
+            {
+                UIManager.OpenResources(UIDefine.HOME_MENU_UI);
+            });
+
             await loadingUI.StartLoading(1f);
         }
     }

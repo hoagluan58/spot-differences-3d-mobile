@@ -7,5 +7,10 @@ namespace SpotDifferences
             public const string MAIN = "Main";
             public const string GAME = "Game";
         }
+
+        public static class SaveKey
+        {
+            public const string USER_SAVE_DATA = "UserSaveData";
+        }
     }
 }

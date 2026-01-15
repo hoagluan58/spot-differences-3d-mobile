@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Redcode.Extensions;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
 {
-    public Transform target;
+    public Transform _target;
     public float rotateSpeed = 0.2f;
     public float minPitch = 15f;
     public float maxPitch = 75f;
@@ -13,9 +14,12 @@ public class CameraRotate : MonoBehaviour
     float pitch;
     float distance;
 
-    void Start()
+    private bool _isInit;
+
+    public void Init(Transform target)
     {
-        var targetMidpoint = GetMidPoint(target);
+        _target = target;
+        var targetMidpoint = GetMidPoint(_target);
 
         Vector3 offset = transform.position - targetMidpoint;
         distance = offset.magnitude;
@@ -23,10 +27,13 @@ public class CameraRotate : MonoBehaviour
         yaw = Mathf.Atan2(offset.x, offset.z) * Mathf.Rad2Deg;
         float horizontalDist = new Vector2(offset.x, offset.z).magnitude;
         pitch = Mathf.Atan2(offset.y, horizontalDist) * Mathf.Rad2Deg;
+        _isInit = true;
     }
 
     void Update()
     {
+        if(!_isInit) return;
+
         Vector2 drag = Vector2.zero;
 
 #if UNITY_EDITOR || UNITY_STANDALONE
@@ -37,9 +44,9 @@ public class CameraRotate : MonoBehaviour
 
 
         // Prevent flipping over the top
-        Vector3 camDir = (transform.position - target.position).normalized;
+        Vector3 camDir = (transform.position - _target.position).normalized;
         if (Vector3.Dot(camDir, Vector3.up) > 0.95f && drag.y < 0) return;
-        
+
         if (drag.sqrMagnitude < 0.0001f)
             return;
 
@@ -55,7 +62,7 @@ public class CameraRotate : MonoBehaviour
         float radYaw = Mathf.Deg2Rad * yaw;
         float radPitch = Mathf.Deg2Rad * pitch;
 
-        var targetMidpoint = GetMidPoint(target);
+        var targetMidpoint = GetMidPoint(_target);
         Vector3 cameraPos;
         cameraPos.x = targetMidpoint.x + distance * Mathf.Cos(radPitch) * Mathf.Sin(radYaw);
         cameraPos.y = targetMidpoint.y + distance * Mathf.Sin(radPitch);
@@ -119,7 +126,9 @@ public class CameraRotate : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Vector3 midpoint = GetMidPoint(target);
+        if (_target == null) return;
+
+        Vector3 midpoint = GetMidPoint(_target);
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(midpoint, 1f);
     }

@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using NFramework;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,18 @@ namespace SpotDifferences
     public class LoadingUI : UIView
     {
         [SerializeField] private Slider _fillLoadingIMG;
+        [SerializeField] private Button _startBTN;
+
+        private Action _onStartButtonAction;
+
+        private void Awake()
+        {
+            _startBTN.onClick.AddListener(() =>
+            {
+                _onStartButtonAction?.Invoke();
+                CloseSelf();
+            });
+        }
 
         private void SetFillAmount(float amount)
         {
@@ -23,7 +36,14 @@ namespace SpotDifferences
                 SetFillAmount(timer / loadingTime);
                 await UniTask.Yield();
             }
-            CloseSelf();
+
+            _fillLoadingIMG.gameObject.SetActive(false);
+            _startBTN.gameObject.SetActive(true);
+        }
+
+        public void SetStartButtonAction(Action action)
+        {
+            _onStartButtonAction = action;
         }
     }
 }

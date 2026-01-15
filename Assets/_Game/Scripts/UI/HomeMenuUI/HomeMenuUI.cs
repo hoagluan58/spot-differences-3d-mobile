@@ -6,17 +6,28 @@ namespace SpotDifferences
 {
     public class HomeMenuUI : UIView
     {
-        [SerializeField] private Button _startBTN;
+        [SerializeField] private Button _settingsBTN;
+        [SerializeField] private LevelScrollView _levelScrollView;
 
         private void Awake()
         {
-            _startBTN.onClick.AddListener(OnStartButtonClick);
+            _settingsBTN.onClick.AddListener(OnSettingsButtonClicked);
         }
 
-        private async void OnStartButtonClick()
+        public override void OnOpen(UIInputData inputData)
         {
-            CloseSelf();
-            await SceneLoader.Load(Define.SceneName.GAME, true, true);
+            base.OnOpen(inputData);
+            Init();
+        }
+        
+        private void Init()
+        {
+            _levelScrollView.SetData();
+        }
+
+        private void OnSettingsButtonClicked()
+        {
+
         }
     }
 }

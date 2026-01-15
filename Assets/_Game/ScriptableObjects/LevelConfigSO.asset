@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e11432d97950c444a3c2b4d4630d250, type: 3}
+  m_Name: LevelConfigSO
+  m_EditorClassIdentifier: 
+  _datas:
+  - Id: 0
+    LevelPrefab: {fileID: 2685437088745451846, guid: 4b9a6d03c98e96d4a80fc990a9a82ab7,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_00
+  - Id: 1
+    LevelPrefab: {fileID: 2685437088745451846, guid: 1945062c45e8b054bac2373ba5b2b93c,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_01
+  - Id: 2
+    LevelPrefab: {fileID: 2685437088745451846, guid: 92fb03d36dc78fc40b1ff16830a1868b,
+      type: 3}
+    Difficulty: 2
+    LevelPrefabName: Level_02
+  - Id: 3
+    LevelPrefab: {fileID: 2685437088745451846, guid: a2cd37a5944fdf94f8ccad23209c9503,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_03
+  - Id: 4
+    LevelPrefab: {fileID: 2685437088745451846, guid: 10226813e8d58c44b832d63d8b3a8ed5,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_04
+  - Id: 5
+    LevelPrefab: {fileID: 2685437088745451846, guid: 7f20d0430bef49448aadf3a5b8f0dad1,
+      type: 3}
+    Difficulty: 2
+    LevelPrefabName: Level_05
+  _sheetId: 1HwWN70ZJzBEM8214AxyTEPEi6vKwNToTGjfWXJzxVHQ
+  _isSheetIdEncrypted: 0
+  _gridId: 267826447
+  _tsvCachePath: 
+  _jsonCachePath: 

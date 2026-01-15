@@ -26,6 +26,7 @@ namespace SpotDifferences
 
         private void RegisterSaveData()
         {
+            LocalSaveManager.RegisterSaveData(UserSaveData.I);
             LocalSaveManager.RegisterSaveData(SoundManager.I);
             LocalSaveManager.RegisterSaveData(VibrationManager.I);
             LocalSaveManager.Load();
