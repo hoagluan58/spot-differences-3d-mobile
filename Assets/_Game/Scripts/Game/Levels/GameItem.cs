@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpotDifferences
 {
     public class GameItem : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private string _id;
+        [SerializeField] private int _sceneId;
+
+        public string Id => _id;
+        public int SceneId => _sceneId;
+
+        public void Found()
         {
-        
+            GameManager.I.HandleFoundItem();
+            Debug.Log($"You have found object ID: {_id} in scene: {_sceneId}");
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SetActive(bool isActive)
         {
-        
+            gameObject.SetActive(isActive);
         }
     }
 }

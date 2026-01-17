@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +5,9 @@ namespace SpotDifferences
 {
     public class GameLevel : MonoBehaviour
     {
-        private int _levevlIndex;
+        private Dictionary<int, List<GameItem>> _gameItems = new Dictionary<int, List<GameItem>>();
 
-        public void Init(int levelIndex)
+        public void Init()
         {
         }
     }

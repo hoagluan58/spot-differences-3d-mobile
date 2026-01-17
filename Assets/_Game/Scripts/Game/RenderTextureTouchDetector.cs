@@ -5,18 +5,13 @@ namespace SpotDifferences
     public class RenderTextureTouchDetector : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        [SerializeField] private Camera _mainCamera;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private float _maxHoldDuration;
         [SerializeField] private float _holdDuration;
 
-        private Camera _mainCamera;
         private RaycastHit[] _hitBuffer = new RaycastHit[5];
-        private GameObject _lastHitObject;
-
-        private void Awake()
-        {
-            _mainCamera = Camera.main;
-        }
+        private GameItem _lastHitObject;
 
         private void Update()
         {
@@ -33,14 +28,14 @@ namespace SpotDifferences
             if (Input.GetMouseButtonUp(0))
             {
                 if (IsTouchObject())
-                { 
+                {
                     HandleObject();
                 }
                 _holdDuration = 0f;
             }
         }
 
-        private GameObject HandleTouch(Vector2 screenPos)
+        private GameItem HandleTouch(Vector2 screenPos)
         {
             Ray ray = _mainCamera.ScreenPointToRay(screenPos);
 
@@ -56,27 +51,37 @@ namespace SpotDifferences
                 new Vector3(uv.x, uv.y, 0f)
             );
 
-            var hitCount = Physics.RaycastNonAlloc(sceneRay, _hitBuffer, 1000f, _layerMask);
+            var hitCount = Physics.RaycastNonAlloc(sceneRay, _hitBuffer, Mathf.Infinity, _layerMask);
 
             if (hitCount == 0)
             {
                 return null;
             }
 
-            RaycastHit closestHit = _hitBuffer[0];
+            GameItem closestItem = null;
+            float closestDist = float.MaxValue;
 
-            for (var i = 1; i < hitCount; i++)
+
+            for (int i = 0; i < hitCount; i++)
             {
-                if (_hitBuffer[i].distance < closestHit.distance)
-                    closestHit = _hitBuffer[i];
+                RaycastHit hit = _hitBuffer[i];
+
+                if (!hit.collider.TryGetComponent(out GameItem item))
+                    continue;
+
+                if (hit.distance < closestDist)
+                {
+                    closestDist = hit.distance;
+                    closestItem = item;
+                }
             }
 
-            return closestHit.collider.gameObject;
+            return closestItem;
         }
 
         private void HandleObject()
         {
-            Debug.Log($"{_lastHitObject.name}");
+            _lastHitObject.Found();
             _lastHitObject = null;
         }
 

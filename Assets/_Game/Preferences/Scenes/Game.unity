@@ -96,8 +96,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 372b0d92d176bac41b0a100434d2a475,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: db8117975657fdf40b5fd1b0f0697231,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -227,7 +229,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 961
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -388,7 +390,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 769
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e06a7f426927ce6458bf4dc65dc50fd7, type: 2}
   m_TargetDisplay: 0
@@ -520,9 +522,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1233276878}
+  _mainCamera: {fileID: 573894639}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 448
   _maxHoldDuration: 0.2
   _holdDuration: 0
 --- !u!1 &256775114
@@ -641,9 +644,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1233276878}
+  _mainCamera: {fileID: 573894639}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   _maxHoldDuration: 0.2
   _holdDuration: 0
 --- !u!64 &419457555
@@ -796,10 +800,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe61bff50687ea469619da07331527b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screens:
-  - {fileID: 160614095}
-  - {fileID: 941326787}
-  - {fileID: 1604438861}
+  _screensDic:
+    m_Keys: 0100000002000000
+    m_Values:
+    - {fileID: 1585307459}
+    - {fileID: 1942663253}
   _layerMapping:
     m_Keys: 000000000100000002000000
     m_Values:
@@ -810,6 +815,7 @@ MonoBehaviour:
     - serializedVersion: 2
       m_Bits: 256
   _rootLevelTf: {fileID: 509139408}
+  _cameraRotate: {fileID: 1426786719}
 --- !u!1 &573894634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,9 +1064,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1638534691}
+  _mainCamera: {fileID: 573894639}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 448
   _maxHoldDuration: 0.2
   _holdDuration: 0
 --- !u!1 &1233276871
@@ -1211,7 +1218,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 577
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f40f13839ff9cb648b9c5d1526847066, type: 2}
   m_TargetDisplay: 0
@@ -1271,7 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7014717d706d7545a21efc4718bffac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  _target: {fileID: 0}
   rotateSpeed: 0.2
   minPitch: 0
   maxPitch: 360
@@ -1365,7 +1372,7 @@ Light:
   m_InnerSpotAngle: 16.64629
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: 128
     m_CustomResolution: -1
     m_Strength: 0.474
@@ -1396,7 +1403,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 961
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1457,9 +1464,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1638534691}
+  _mainCamera: {fileID: 573894639}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   _maxHoldDuration: 0.2
   _holdDuration: 0
 --- !u!64 &1580942102
@@ -1687,9 +1695,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 125723316}
+  _mainCamera: {fileID: 573894639}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 448
   _maxHoldDuration: 0.2
   _holdDuration: 0
 --- !u!1 &1638534684
@@ -1840,7 +1849,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 641
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 2e3c07e5cad589f47a45a5ece75bc16d, type: 2}
   m_TargetDisplay: 0
