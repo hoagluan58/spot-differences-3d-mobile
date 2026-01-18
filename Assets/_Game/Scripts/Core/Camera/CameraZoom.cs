@@ -1,3 +1,4 @@
+using NFramework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,8 @@ namespace SpotDifferences
 
         private void HandleMouse()
         {
+            if (UIManager.IsPointerOverUIObject()) return;
+
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll == 0) return;
 
@@ -52,6 +55,8 @@ namespace SpotDifferences
 
         private void HandleTouch()
         {
+            if (UIManager.IsPointerOverUIObject()) return;
+
             if (Input.touchCount == 2)
             {
                 Touch a = Input.GetTouch(0);

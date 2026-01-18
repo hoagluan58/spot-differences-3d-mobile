@@ -78,5 +78,22 @@ namespace SpotDifferences
             _cameraRotate.ResetCam();
             _cameraZoom.ResetCam();
         }
+
+        public async void Retry()
+        {
+            var curLevelId = _curLevelCfg.Id;
+
+            await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
+            UIManager.Close(UIDefine.GAME_POPUP_UI);
+            await SceneLoader.Load(Define.SceneName.GAME, true, true);
+            GameManager.I.StartGame(curLevelId);
+        }
+
+        public async void BackToHomeMenu()
+        {
+            await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
+            UIManager.Close(UIDefine.GAME_POPUP_UI);
+            UIManager.OpenResources(UIDefine.HOME_MENU_UI);
+        }
     }
 }

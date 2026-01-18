@@ -27,7 +27,7 @@ namespace SpotDifferences
 
         private void OnSettingsButtonClicked()
         {
-
+            UIManager.OpenResources<SettingsPopupUI>(UIDefine.SETTINGS_POPUP_UI).Init(true);
         }
     }
 }

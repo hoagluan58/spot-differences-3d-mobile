@@ -11,7 +11,8 @@ namespace SpotDifferences
 		public static string GAME_POPUP_UI = "GamePopupUI";
 		public static string LOSE_POPUP_UI = "LosePopupUI";
 		public static string WIN_POPUP_UI = "WinPopupUI";
-        // Loading
-        public static string LOADING_UI = "LoadingUI";
+		public static string SETTINGS_POPUP_UI = "SettingsPopupUI";
+		// Loading
+		public static string LOADING_UI = "LoadingUI";
 	}
 }

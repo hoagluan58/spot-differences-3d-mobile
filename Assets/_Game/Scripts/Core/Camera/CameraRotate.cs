@@ -1,4 +1,5 @@
-﻿using Redcode.Extensions;
+﻿using NFramework;
+using Redcode.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -40,14 +41,15 @@ public class CameraRotate : MonoBehaviour
     }
 
     public void ResetCam()
-    { 
+    {
         transform.position = _basePos;
         transform.rotation = Quaternion.Euler(_baseRot);
     }
 
     void Update()
     {
-        if(!_isInit) return;
+        if (!_isInit) return;
+        if (UIManager.IsPointerOverUIObject()) return;
 
         Vector2 drag = Vector2.zero;
 

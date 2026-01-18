@@ -10,10 +10,12 @@ namespace SpotDifferences
         [SerializeField] private TextMeshProUGUI _levelTMP;
         [SerializeField] private Button _hintBTN;
         [SerializeField] private Button _defaultCamBTN;
+        [SerializeField] private Button _settingsBTN;
 
         private void Awake()
         {
             _defaultCamBTN.onClick.AddListener(OnDefaultCamButtonClicked);
+            _settingsBTN.onClick.AddListener(OnSettingsButtonClicked);
         }
 
         public void Init(string level)
@@ -24,6 +26,11 @@ namespace SpotDifferences
         private void OnDefaultCamButtonClicked()
         {
             GameManager.I.ResetCam();
+        }
+
+        private void OnSettingsButtonClicked()
+        {
+            UIManager.OpenResources<SettingsPopupUI>(UIDefine.SETTINGS_POPUP_UI).Init(false);
         }
     }
 }

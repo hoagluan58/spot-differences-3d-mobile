@@ -1,3 +1,5 @@
+using NFramework;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace SpotDifferences
@@ -12,10 +14,14 @@ namespace SpotDifferences
 
         private float _holdDuration;
         private RaycastHit[] _hitBuffer = new RaycastHit[5];
+        private RaycastHit[] _hitBuffer2 = new RaycastHit[5];
         private GameItem _lastHitObject;
+        private Vector3 _lastHitPosition;
 
         private void Update()
         {
+            if (UIManager.IsPointerOverUIObject()) return;
+
             if (Input.GetMouseButtonDown(0))
             {
                 _lastHitObject = HandleTouch(Input.mousePosition);
@@ -32,13 +38,16 @@ namespace SpotDifferences
                 {
                     if (_lastHitObject != null)
                     {
+                        TouchVFXController.I.PlayRightVFX(_lastHitObject.transform.position);
                         HandleObject();
                     }
                     else
-                    {
-                        Debug.Log("No object found");
+                    { 
+                        TouchVFXController.I.PlayWrongVFX(_lastHitPosition);
+                        Debug.Log("Miss");
                     }
                 }
+
                 _holdDuration = 0f;
             }
         }
@@ -60,6 +69,12 @@ namespace SpotDifferences
             );
 
             var hitCount = Physics.RaycastNonAlloc(sceneRay, _hitBuffer, Mathf.Infinity, _layerMask);
+            var hitCount2 = Physics.RaycastNonAlloc(sceneRay, _hitBuffer2, Mathf.Infinity);
+
+            if (hitCount2 > 0)
+            {
+                _lastHitPosition = _hitBuffer2[0].point;
+            }
 
             if (hitCount == 0)
             {
