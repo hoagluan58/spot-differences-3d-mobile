@@ -32,6 +32,7 @@ namespace SpotDifferences
         private async void OnUnlockButtonClicked()
         {
             await SceneLoader.Load(Define.SceneName.GAME, true, true);
+            UIManager.Close(UIDefine.HOME_MENU_UI);
             GameManager.I.StartGame(_levelId);
         }
 

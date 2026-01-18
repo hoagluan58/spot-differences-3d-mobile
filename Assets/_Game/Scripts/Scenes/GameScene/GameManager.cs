@@ -15,6 +15,7 @@ namespace SpotDifferences
 
         public void StartGame(string level)
         {
+            UIManager.OpenResources<GamePopupUI>(UIDefine.GAME_POPUP_UI).Init(level);
             _curLevelCfg = ConfigManager.I.LevelConfigDic[level];
 
             if (_curLevelCfg == null)
@@ -26,11 +27,30 @@ namespace SpotDifferences
             }
 
             _curGameLevel = Instantiate(_curLevelCfg.LevelPrefab, _rootLevelTf.transform).GetComponent<GameLevel>();
+            _curGameLevel.Init();
             _cameraRotate.Init(_curGameLevel.transform);
         }
 
-        public void HandleFoundItem()
+        public void HandleFoundItem(string id, int sceneFounded)
         {
+            _curGameLevel.DestroyItem(id);
+        }
+
+        public void Win()
+        {
+            var winPopup = UIManager.OpenResources<WinPopupUI>(UIDefine.WIN_POPUP_UI);
+
+            winPopup.OnHomeButtonClickedAction = async () =>
+            {
+                await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
+                UIManager.Close(UIDefine.GAME_POPUP_UI);
+                winPopup.CloseSelf();
+            };
+
+            winPopup.OnNextLevelButtonClickedAction = async () =>
+            {
+                await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
+            };
         }
     }
 }

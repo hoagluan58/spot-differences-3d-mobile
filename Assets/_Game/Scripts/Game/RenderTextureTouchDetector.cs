@@ -8,8 +8,9 @@ namespace SpotDifferences
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private float _maxHoldDuration;
-        [SerializeField] private float _holdDuration;
+        [SerializeField] private int _sceneIndex;
 
+        private float _holdDuration;
         private RaycastHit[] _hitBuffer = new RaycastHit[5];
         private GameItem _lastHitObject;
 
@@ -27,9 +28,16 @@ namespace SpotDifferences
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (IsTouchObject())
+                if (IsValidTouch())
                 {
-                    HandleObject();
+                    if (_lastHitObject != null)
+                    {
+                        HandleObject();
+                    }
+                    else
+                    {
+                        Debug.Log("No object found");
+                    }
                 }
                 _holdDuration = 0f;
             }
@@ -81,13 +89,13 @@ namespace SpotDifferences
 
         private void HandleObject()
         {
-            _lastHitObject.Found();
+            GameManager.I.HandleFoundItem(_lastHitObject.Id, _sceneIndex);
             _lastHitObject = null;
         }
 
-        private bool IsTouchObject()
+        private bool IsValidTouch()
         {
-            return _holdDuration < _maxHoldDuration && _lastHitObject != null;
+            return _holdDuration < _maxHoldDuration;
         }
     }
 }

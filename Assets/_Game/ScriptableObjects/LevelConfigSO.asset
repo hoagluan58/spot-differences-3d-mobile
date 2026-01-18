@@ -16,7 +16,7 @@ MonoBehaviour:
   - Id: 0
     LevelPrefab: {fileID: 2685437088745451846, guid: 4b9a6d03c98e96d4a80fc990a9a82ab7,
       type: 3}
-    Difficulty: 1
+    Difficulty: 2
     LevelPrefabName: Level_00
   - Id: 1
     LevelPrefab: {fileID: 2685437088745451846, guid: 1945062c45e8b054bac2373ba5b2b93c,
