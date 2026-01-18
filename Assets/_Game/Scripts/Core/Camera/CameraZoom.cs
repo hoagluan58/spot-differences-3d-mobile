@@ -12,10 +12,11 @@ namespace SpotDifferences
         public float minFOV = 2f;
         public float maxFOV = 20f;
 
-
-        private void Start()
+        private float _baseFOV;
+        private void Awake()
         {
             cameras = new List<Camera>(GetComponentsInChildren<Camera>());
+            _baseFOV = cameras[0].fieldOfView;
         }
 
         private void Update()
@@ -25,6 +26,14 @@ namespace SpotDifferences
 #else
             HandleTouch();
 #endif
+        }
+
+        public void ResetCam()
+        {
+            foreach (var cam in cameras)
+            {
+                cam.fieldOfView = _baseFOV;
+            }
         }
 
         private void HandleMouse()
@@ -53,7 +62,7 @@ namespace SpotDifferences
                 float curr = (a.position - b.position).magnitude;
 
                 float delta = curr - prev;
-                foreach(var cam in cameras)
+                foreach (var cam in cameras)
                 {
                     cam.fieldOfView -= delta * zoomSpeed * 0.01f;
                     cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, minFOV, maxFOV);

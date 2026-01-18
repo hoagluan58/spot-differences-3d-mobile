@@ -807,6 +807,7 @@ MonoBehaviour:
     - {fileID: 1942663253}
   _rootLevelTf: {fileID: 509139408}
   _cameraRotate: {fileID: 1426786719}
+  _cameraZoom: {fileID: 1426786720}
 --- !u!1 &573894634
 GameObject:
   m_ObjectHideFlags: 0

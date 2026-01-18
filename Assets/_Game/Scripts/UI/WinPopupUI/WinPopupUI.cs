@@ -27,7 +27,6 @@ namespace SpotDifferences
         private void OnNextLevelButtonClicked()
         {
             OnNextLevelButtonClickedAction?.Invoke();
-            CloseSelf();
         }
     }
 }

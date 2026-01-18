@@ -16,6 +16,15 @@ public class CameraRotate : MonoBehaviour
 
     private bool _isInit;
 
+    private Vector3 _basePos = Vector3.zero;
+    private Vector3 _baseRot = Vector3.zero;
+
+    private void Awake()
+    {
+        _basePos = transform.position;
+        _baseRot = transform.rotation.eulerAngles;
+    }
+
     public void Init(Transform target)
     {
         _target = target;
@@ -28,6 +37,12 @@ public class CameraRotate : MonoBehaviour
         float horizontalDist = new Vector2(offset.x, offset.z).magnitude;
         pitch = Mathf.Atan2(offset.y, horizontalDist) * Mathf.Rad2Deg;
         _isInit = true;
+    }
+
+    public void ResetCam()
+    { 
+        transform.position = _basePos;
+        transform.rotation = Quaternion.Euler(_baseRot);
     }
 
     void Update()

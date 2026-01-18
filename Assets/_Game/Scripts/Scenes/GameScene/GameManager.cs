@@ -9,14 +9,15 @@ namespace SpotDifferences
         [SerializeField] private SerializedDictionary<ELevelType, GameObject> _screensDic;
         [SerializeField] private Transform _rootLevelTf;
         [SerializeField] private CameraRotate _cameraRotate;
+        [SerializeField] private CameraZoom _cameraZoom;
 
         private GameLevel _curGameLevel;
         private LevelConfig _curLevelCfg;
 
         public void StartGame(string level)
         {
-            UIManager.OpenResources<GamePopupUI>(UIDefine.GAME_POPUP_UI).Init(level);
             _curLevelCfg = ConfigManager.I.LevelConfigDic[level];
+            UIManager.OpenResources<GamePopupUI>(UIDefine.GAME_POPUP_UI).Init((int.Parse(_curLevelCfg.Id) + 1).ToString());
 
             if (_curLevelCfg == null)
                 return;
@@ -38,19 +39,44 @@ namespace SpotDifferences
 
         public void Win()
         {
+            var nextLevelId = int.Parse(_curLevelCfg.Id) + 1;
+            var nextLevelConfig = ConfigManager.I.LevelConfigDic[nextLevelId.ToString()];
             var winPopup = UIManager.OpenResources<WinPopupUI>(UIDefine.WIN_POPUP_UI);
 
+            if (nextLevelConfig != null)
+            {
+                UserSaveData.I.UnlockLevel(nextLevelConfig.Id);
+            }
             winPopup.OnHomeButtonClickedAction = async () =>
             {
                 await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
-                UIManager.Close(UIDefine.GAME_POPUP_UI);
                 winPopup.CloseSelf();
+                UIManager.Close(UIDefine.GAME_POPUP_UI);
+                UIManager.OpenResources(UIDefine.HOME_MENU_UI);
             };
 
             winPopup.OnNextLevelButtonClickedAction = async () =>
             {
                 await SceneLoader.Unload(Define.SceneName.GAME, Define.SceneName.MAIN);
+                winPopup.CloseSelf();
+                UIManager.Close(UIDefine.GAME_POPUP_UI);
+
+                if (nextLevelConfig != null)
+                {
+                    await SceneLoader.Load(Define.SceneName.GAME, true, true);
+                    GameManager.I.StartGame(nextLevelConfig.Id);
+                }
+                else
+                {
+                    UIManager.OpenResources(UIDefine.HOME_MENU_UI);
+                }
             };
+        }
+
+        public void ResetCam()
+        {
+            _cameraRotate.ResetCam();
+            _cameraZoom.ResetCam();
         }
     }
 }

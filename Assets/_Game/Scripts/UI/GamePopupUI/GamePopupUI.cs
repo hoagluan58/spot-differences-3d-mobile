@@ -1,6 +1,4 @@
 using NFramework;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,10 +11,19 @@ namespace SpotDifferences
         [SerializeField] private Button _hintBTN;
         [SerializeField] private Button _defaultCamBTN;
 
-        public void Init(string level)
+        private void Awake()
         {
-            _levelTMP.text = level;
+            _defaultCamBTN.onClick.AddListener(OnDefaultCamButtonClicked);
         }
 
+        public void Init(string level)
+        {
+            _levelTMP.text = $"Level {level}";
+        }
+
+        private void OnDefaultCamButtonClicked()
+        {
+            GameManager.I.ResetCam();
+        }
     }
 }
