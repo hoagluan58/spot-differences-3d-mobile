@@ -44,7 +44,6 @@ namespace SpotDifferences
                     else
                     { 
                         TouchVFXController.I.PlayWrongVFX(_lastHitPosition);
-                        Debug.Log("Miss");
                     }
                 }
 
