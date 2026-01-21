@@ -37,6 +37,7 @@ namespace SpotDifferences
         public string Id;
         public GameObject LevelPrefab;
         public ELevelType Difficulty;
+        public string Title;
 
         [HideInInspector]
         public string LevelPrefabName;

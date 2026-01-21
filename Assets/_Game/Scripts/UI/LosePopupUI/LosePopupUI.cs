@@ -1,4 +1,5 @@
 using NFramework;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ namespace SpotDifferences
         [SerializeField] private Button _homeBTN;
         [SerializeField] private Button _retryBTN;
 
+        public Action OnHomeButtonClickedAction;
+        public Action OnRetryButtonClickedAction;
+
         private void Awake()
         {
             _homeBTN.onClick.AddListener(OnHomeButtonClicked);
@@ -17,12 +21,12 @@ namespace SpotDifferences
 
         private void OnHomeButtonClicked()
         {
-            CloseSelf();
+            OnHomeButtonClickedAction?.Invoke();
         }
 
         private void OnRetryButtonClicked()
         {
-            CloseSelf();
+            OnRetryButtonClickedAction?.Invoke();
         }
     }
 }
