@@ -16,33 +16,63 @@ MonoBehaviour:
   - Id: 0
     LevelPrefab: {fileID: 2685437088745451846, guid: 4b9a6d03c98e96d4a80fc990a9a82ab7,
       type: 3}
-    Difficulty: 2
+    Difficulty: 1
     LevelPrefabName: Level_00
   - Id: 1
-    LevelPrefab: {fileID: 2685437088745451846, guid: 1945062c45e8b054bac2373ba5b2b93c,
+    LevelPrefab: {fileID: 2685437088745451846, guid: 1037df346e1c44ec4b32803d8c84e1d4,
       type: 3}
     Difficulty: 1
     LevelPrefabName: Level_01
   - Id: 2
-    LevelPrefab: {fileID: 2685437088745451846, guid: 92fb03d36dc78fc40b1ff16830a1868b,
+    LevelPrefab: {fileID: 2685437088745451846, guid: 7ef973eb77b4d4f0a91dfc2cffdb7812,
       type: 3}
     Difficulty: 2
     LevelPrefabName: Level_02
   - Id: 3
-    LevelPrefab: {fileID: 2685437088745451846, guid: a2cd37a5944fdf94f8ccad23209c9503,
+    LevelPrefab: {fileID: 1001920928166052243, guid: 8f60ded4ead784a53be2da5fb1b315df,
       type: 3}
     Difficulty: 1
     LevelPrefabName: Level_03
   - Id: 4
-    LevelPrefab: {fileID: 2685437088745451846, guid: 10226813e8d58c44b832d63d8b3a8ed5,
-      type: 3}
-    Difficulty: 1
-    LevelPrefabName: Level_04
-  - Id: 5
-    LevelPrefab: {fileID: 2685437088745451846, guid: 7f20d0430bef49448aadf3a5b8f0dad1,
+    LevelPrefab: {fileID: 1001920928166052243, guid: b3d88e7a153c7804fb304333e00c68d2,
       type: 3}
     Difficulty: 2
+    LevelPrefabName: Level_04
+  - Id: 5
+    LevelPrefab: {fileID: 1001920928166052243, guid: 07b50ec7f8a9c4e9c8fce1c83eeedbeb,
+      type: 3}
+    Difficulty: 1
     LevelPrefabName: Level_05
+  - Id: 6
+    LevelPrefab: {fileID: 2565413342797709706, guid: acbbefddd9c844dc88a22cf8b6a69139,
+      type: 3}
+    Difficulty: 2
+    LevelPrefabName: Level_06
+  - Id: 7
+    LevelPrefab: {fileID: 2565413342797709706, guid: 7b452bcc010c14ca89ee982d3526c1fa,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_07
+  - Id: 8
+    LevelPrefab: {fileID: 2565413342797709706, guid: 7950bfc7840e14f9ba4e60906e9393e3,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_08
+  - Id: 9
+    LevelPrefab: {fileID: 5598854819241591993, guid: 31e50008747d64c18b876fbd38177755,
+      type: 3}
+    Difficulty: 1
+    LevelPrefabName: Level_09
+  - Id: 10
+    LevelPrefab: {fileID: 5748772221035105565, guid: df2464b1b719e431288886ff6bac21a2,
+      type: 3}
+    Difficulty: 2
+    LevelPrefabName: Level_10
+  - Id: 11
+    LevelPrefab: {fileID: 5748772221035105565, guid: e4563de36a81c45b98cde1ea6cca4997,
+      type: 3}
+    Difficulty: 2
+    LevelPrefabName: Level_11
   _sheetId: 1HwWN70ZJzBEM8214AxyTEPEi6vKwNToTGjfWXJzxVHQ
   _isSheetIdEncrypted: 0
   _gridId: 267826447
