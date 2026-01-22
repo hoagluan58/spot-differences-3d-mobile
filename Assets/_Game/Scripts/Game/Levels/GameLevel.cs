@@ -11,6 +11,7 @@ namespace SpotDifferences
 
         private Dictionary<string, List<GameItem>> _gameItems = new Dictionary<string, List<GameItem>>();
         private int _currentItemIndex = 0;
+        private List<string> _foundItems = new List<string>();
 
         public void Init()
         {
@@ -36,10 +37,24 @@ namespace SpotDifferences
         {
             _currentItemIndex++;
             _gameItems[id].ForEach(item => item.SetActive(false));
+            _foundItems.Add(id);
             OnTrackItemUpdate?.Invoke(_currentItemIndex);
             if (_currentItemIndex == _gameItems.Keys.Count)
             {
                 GameManager.I.Win();
+            }
+        }
+
+        public void Hint()
+        {
+            var keys = _gameItems.Keys;
+            foreach (var key in keys)
+            {
+                if (!_foundItems.Contains(key))
+                {
+                    _gameItems[key].ForEach(item => item.ToggleOutline(true));
+                    break;
+                }
             }
         }
     }

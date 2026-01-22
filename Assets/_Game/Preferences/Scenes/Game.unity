@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 125723315}
   - component: {fileID: 125723314}
   - component: {fileID: 125723313}
+  - component: {fileID: 125723317}
   m_Layer: 0
   m_Name: StageCamera_02
   m_TagString: Untagged
@@ -402,6 +403,31 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &125723317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125723311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 1
+  renderingStrategy: 0
+  renderingMode: 0
+  outlineLayerMask: -1
+  primaryBufferSizeMode: 0
+  primaryRendererScale: 0.75
+  primarySizeReference: 800
+  blurShift: 1
+  dilateShift: 1
+  dilateIterations: 1
+  dilateQuality: 0
+  blurIterations: 1
+  blurType: 1
 --- !u!1 &160614095
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +835,9 @@ MonoBehaviour:
   _rootLevelTf: {fileID: 509139408}
   _cameraRotate: {fileID: 1426786719}
   _cameraZoom: {fileID: 1426786720}
+  _sessionData:
+    HintCount: 1
+    TimeLeft: 60
 --- !u!1 &573894634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1105,7 @@ GameObject:
   - component: {fileID: 1233276877}
   - component: {fileID: 1233276874}
   - component: {fileID: 1233276873}
+  - component: {fileID: 1233276879}
   m_Layer: 0
   m_Name: StageCamera_00
   m_TagString: Untagged
@@ -1223,6 +1253,31 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1233276879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233276871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 1
+  renderingStrategy: 0
+  renderingMode: 0
+  outlineLayerMask: -1
+  primaryBufferSizeMode: 0
+  primaryRendererScale: 0.75
+  primarySizeReference: 800
+  blurShift: 1
+  dilateShift: 1
+  dilateIterations: 1
+  dilateQuality: 0
+  blurIterations: 1
+  blurType: 1
 --- !u!1 &1426786717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1762,7 @@ GameObject:
   - component: {fileID: 1638534690}
   - component: {fileID: 1638534687}
   - component: {fileID: 1638534686}
+  - component: {fileID: 1638534692}
   m_Layer: 0
   m_Name: StageCamera_01
   m_TagString: Untagged
@@ -1854,6 +1910,31 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1638534692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638534684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb42831ee5422f409e7f24f9e7488ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 1
+  renderingStrategy: 0
+  renderingMode: 0
+  outlineLayerMask: -1
+  primaryBufferSizeMode: 0
+  primaryRendererScale: 0.75
+  primarySizeReference: 800
+  blurShift: 1
+  dilateShift: 1
+  dilateIterations: 1
+  dilateQuality: 0
+  blurIterations: 1
+  blurType: 1
 --- !u!1 &1911839624
 GameObject:
   m_ObjectHideFlags: 0

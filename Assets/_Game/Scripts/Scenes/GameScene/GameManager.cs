@@ -152,6 +152,7 @@ namespace SpotDifferences
             if (_sessionData.HintCount > 0)
             {
                 _sessionData.HintCount--;
+                _curGameLevel.Hint();
                 OnSessionDataChanged?.Invoke(_sessionData);
             }
         }
