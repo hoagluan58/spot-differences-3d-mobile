@@ -23,6 +23,7 @@ namespace SpotDifferences
         private void Init()
         {
             _levelScrollView.SetData();
+            SoundManager.PlayBgm(SoundDefine.SoundEntryKey.BGM);
         }
 
         private void OnSettingsButtonClicked()

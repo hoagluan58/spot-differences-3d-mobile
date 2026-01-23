@@ -17,62 +17,128 @@ MonoBehaviour:
     LevelPrefab: {fileID: 2685437088745451846, guid: 4b9a6d03c98e96d4a80fc990a9a82ab7,
       type: 3}
     Difficulty: 1
+    Title: First try
     LevelPrefabName: Level_00
   - Id: 1
     LevelPrefab: {fileID: 2685437088745451846, guid: 1037df346e1c44ec4b32803d8c84e1d4,
       type: 3}
     Difficulty: 1
+    Title: Fresh View
     LevelPrefabName: Level_01
   - Id: 2
     LevelPrefab: {fileID: 2685437088745451846, guid: 7ef973eb77b4d4f0a91dfc2cffdb7812,
       type: 3}
     Difficulty: 2
+    Title: Triple Spot
     LevelPrefabName: Level_02
   - Id: 3
     LevelPrefab: {fileID: 1001920928166052243, guid: 8f60ded4ead784a53be2da5fb1b315df,
       type: 3}
     Difficulty: 1
+    Title: Cozy Kitchen
     LevelPrefabName: Level_03
   - Id: 4
     LevelPrefab: {fileID: 1001920928166052243, guid: b3d88e7a153c7804fb304333e00c68d2,
       type: 3}
     Difficulty: 2
+    Title: Kitchen Trio
     LevelPrefabName: Level_04
   - Id: 5
     LevelPrefab: {fileID: 1001920928166052243, guid: 07b50ec7f8a9c4e9c8fce1c83eeedbeb,
       type: 3}
     Difficulty: 1
+    Title: Chaotic Kitchen
     LevelPrefabName: Level_05
   - Id: 6
     LevelPrefab: {fileID: 2565413342797709706, guid: acbbefddd9c844dc88a22cf8b6a69139,
       type: 3}
     Difficulty: 2
+    Title: Bunk Bedroom
     LevelPrefabName: Level_06
   - Id: 7
     LevelPrefab: {fileID: 2565413342797709706, guid: 7b452bcc010c14ca89ee982d3526c1fa,
       type: 3}
     Difficulty: 1
+    Title: Shrinking Room
     LevelPrefabName: Level_07
   - Id: 8
     LevelPrefab: {fileID: 2565413342797709706, guid: 7950bfc7840e14f9ba4e60906e9393e3,
       type: 3}
     Difficulty: 1
+    Title: Messy Bed
     LevelPrefabName: Level_08
   - Id: 9
     LevelPrefab: {fileID: 5598854819241591993, guid: 31e50008747d64c18b876fbd38177755,
       type: 3}
     Difficulty: 1
+    Title: Relax Time
     LevelPrefabName: Level_09
   - Id: 10
     LevelPrefab: {fileID: 5748772221035105565, guid: df2464b1b719e431288886ff6bac21a2,
       type: 3}
     Difficulty: 2
+    Title: Where my Duck
     LevelPrefabName: Level_10
   - Id: 11
     LevelPrefab: {fileID: 5748772221035105565, guid: e4563de36a81c45b98cde1ea6cca4997,
       type: 3}
     Difficulty: 2
+    Title: Bathroom Panic
     LevelPrefabName: Level_11
+  - Id: 12
+    LevelPrefab: {fileID: 3819523025249132797, guid: 338252d9d5f424557aa8b37a08018871,
+      type: 3}
+    Difficulty: 2
+    Title: Equal
+    LevelPrefabName: Level_12
+  - Id: 13
+    LevelPrefab: {fileID: 5152938670921883184, guid: b0a88b50895b644f383435128c82e533,
+      type: 3}
+    Difficulty: 2
+    Title: Growing
+    LevelPrefabName: Level_13
+  - Id: 14
+    LevelPrefab: {fileID: 5152938670921883184, guid: 5e45c2a1d6ebb407ca5ce624049555da,
+      type: 3}
+    Difficulty: 2
+    Title: Shrinking
+    LevelPrefabName: Level_14
+  - Id: 15
+    LevelPrefab: {fileID: 7975602080552968370, guid: 8a904da8155b14c5e86c3dff0180a825,
+      type: 3}
+    Difficulty: 1
+    Title: Prepare the Challenge
+    LevelPrefabName: Level_15
+  - Id: 16
+    LevelPrefab: {fileID: 1231989038251740681, guid: 8f1fe98d76af64359958a0114866cc00,
+      type: 3}
+    Difficulty: 1
+    Title: Color Check
+    LevelPrefabName: Level_16
+  - Id: 17
+    LevelPrefab: {fileID: 1231989038251740681, guid: 31e521e1c19df4d07a6b2378422dddbf,
+      type: 3}
+    Difficulty: 1
+    Title: Something Missing
+    LevelPrefabName: Level_17
+  - Id: 18
+    LevelPrefab: {fileID: 23567149085426140, guid: 9f58c24ff2b80874982d4fe36beb202d,
+      type: 3}
+    Difficulty: 1
+    Title: Back to Basic
+    LevelPrefabName: Level_18
+  - Id: 19
+    LevelPrefab: {fileID: 23567149085426140, guid: 354c92e03f0350f43ab3b94bb116016e,
+      type: 3}
+    Difficulty: 1
+    Title: Red Wine
+    LevelPrefabName: Level_19
+  - Id: 20
+    LevelPrefab: {fileID: 23567149085426140, guid: aa5164e851f39e146bd4c3c30007e7bd,
+      type: 3}
+    Difficulty: 1
+    Title: Size Matter
+    LevelPrefabName: Level_20
   _sheetId: 1HwWN70ZJzBEM8214AxyTEPEi6vKwNToTGjfWXJzxVHQ
   _isSheetIdEncrypted: 0
   _gridId: 267826447

@@ -9,6 +9,7 @@ namespace SpotDifferences
     {
         [SerializeField] private Button _homeBTN;
         [SerializeField] private Button _nextLevelBTN;
+        [SerializeField] private GameObject _winVFX;
 
         public Action OnHomeButtonClickedAction;
         public Action OnNextLevelButtonClickedAction;
@@ -17,6 +18,16 @@ namespace SpotDifferences
         {
             _homeBTN.onClick.AddListener(OnHomeButtonClicked);
             _nextLevelBTN.onClick.AddListener(OnNextLevelButtonClicked);
+        }
+
+        private void OnEnable()
+        {
+            _winVFX.SetActive(true);
+        }
+
+        private void OnDisable()
+        {
+            _winVFX.SetActive(false);
         }
 
         private void OnHomeButtonClicked()

@@ -309,6 +309,7 @@ MonoBehaviour:
   _saveData:
     LevelUnlocked:
     - 0
+    IsNewPlayer: 1
 --- !u!1 &2084553049
 GameObject:
   m_ObjectHideFlags: 0

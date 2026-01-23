@@ -21,6 +21,7 @@ namespace SpotDifferences
             RegisterSaveData();
 
             await SoundManager.Initialize();
+            await SoundManager.CacheSoundGroupResources(SoundDefine.SoundGroupKey.SOUND);
             await SceneLoader.Load(Define.SceneName.MAIN, true, true);
         }
 

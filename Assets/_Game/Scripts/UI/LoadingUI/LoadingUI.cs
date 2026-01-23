@@ -38,7 +38,8 @@ namespace SpotDifferences
             }
 
             _fillLoadingIMG.gameObject.SetActive(false);
-            _startBTN.gameObject.SetActive(true);
+            _onStartButtonAction?.Invoke();
+            CloseSelf();
         }
 
         public void SetStartButtonAction(Action action)

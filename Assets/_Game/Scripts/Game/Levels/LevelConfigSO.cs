@@ -20,6 +20,7 @@ namespace SpotDifferences
             });
         }
 
+#if UNITY_EDITOR
         protected override void OnSynced(List<LevelConfig> googleSheetData)
         {
             base.OnSynced(googleSheetData);
@@ -29,6 +30,7 @@ namespace SpotDifferences
                 item.LevelPrefab = FileHelper.LoadFirstAssetWithName<GameObject>(item.LevelPrefabName);
             }
         }
+#endif
     }
 
     [System.Serializable]
