@@ -1,7 +1,0 @@
-﻿one=The First
-two=The Second
-three=The Third
-four=The Fourth
-mute=Mute
-bullet=Bullet
-effect=Effect
