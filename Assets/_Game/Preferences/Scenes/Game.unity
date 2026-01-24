@@ -424,7 +424,7 @@ MonoBehaviour:
   primarySizeReference: 800
   blurShift: 1
   dilateShift: 1
-  dilateIterations: 1
+  dilateIterations: 7
   dilateQuality: 0
   blurIterations: 1
   blurType: 1
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   primarySizeReference: 800
   blurShift: 1
   dilateShift: 1
-  dilateIterations: 1
+  dilateIterations: 7
   dilateQuality: 0
   blurIterations: 1
   blurType: 1
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   primarySizeReference: 800
   blurShift: 1
   dilateShift: 1
-  dilateIterations: 1
+  dilateIterations: 7
   dilateQuality: 0
   blurIterations: 1
   blurType: 1

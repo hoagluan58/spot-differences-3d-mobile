@@ -61,8 +61,10 @@ namespace SpotDifferences
 
         private void SetLevelText(string text)
         {
-            _levelTMP.text = text;
-            _lockTMP.text = text;
+            int.TryParse(text, out int level);
+
+            _levelTMP.text = $"{level + 1}";
+            _lockTMP.text = $"{level + 1}";
         }
     }
 }
