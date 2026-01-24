@@ -11,6 +11,9 @@ namespace SpotDifferences
         [SerializeField] private Button _homeBTN;
         [SerializeField] private Button _retryBTN;
 
+        [SerializeField] private GameObject _bgPopup_1;
+        [SerializeField] private GameObject _bgPopup_2;
+
         private void Awake()
         {
             _closeBTN.onClick.AddListener(OnCloseButtonClick);
@@ -21,8 +24,8 @@ namespace SpotDifferences
 
         public void Init(bool isFromHomeMenu = false)
         {
-            _retryBTN.gameObject.SetActive(!isFromHomeMenu);
-            _homeBTN.gameObject.SetActive(!isFromHomeMenu);
+            _bgPopup_1.SetActive(!isFromHomeMenu);
+            _bgPopup_2.SetActive(isFromHomeMenu);
         }
 
         private void OnEnable()

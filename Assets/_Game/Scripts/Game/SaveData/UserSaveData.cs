@@ -8,11 +8,22 @@ namespace SpotDifferences
     {
         [SerializeField] private SaveData _saveData;
 
-        public bool IsNewPlayer 
-        { 
+        public bool IsNewPlayer
+        {
             get => _saveData.IsNewPlayer;
-            set {
+            set
+            {
                 _saveData.IsNewPlayer = value;
+                DataChanged = true;
+            }
+        }
+
+        public bool IsShowHintTutorial
+        {
+            get => _saveData.IsShowHintTutorial;
+            set
+            {
+                _saveData.IsShowHintTutorial = value;
                 DataChanged = true;
             }
         }
@@ -32,6 +43,7 @@ namespace SpotDifferences
         {
             public List<string> LevelUnlocked = new List<string>() { "0" };
             public bool IsNewPlayer = true;
+            public bool IsShowHintTutorial = false;
         }
 
         public string SaveKey => Define.SaveKey.USER_SAVE_DATA;

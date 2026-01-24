@@ -47,7 +47,7 @@ namespace SpotDifferences
             // Check tutorial
             if (UserSaveData.I.IsNewPlayer)
             {
-                UIManager.OpenResources<TutorialPopupUI>(UIDefine.TUTORIAL_POPUP_UI).Init(() =>
+                UIManager.OpenResources<TutorialPopupUI>(UIDefine.TUTORIAL_POPUP_UI).ShowIntroducePopup(() =>
                 {
                     StartCountdown();
                 });
@@ -149,6 +149,17 @@ namespace SpotDifferences
 
         public void UseHint()
         {
+            if (!UserSaveData.I.IsShowHintTutorial)
+            {
+                UIManager.OpenResources<TutorialPopupUI>(UIDefine.TUTORIAL_POPUP_UI).ShowHintPopup(() =>
+                {
+                    _sessionData.HintCount--;
+                    _curGameLevel.Hint();
+                    OnSessionDataChanged?.Invoke(_sessionData);
+                });
+                return;
+            }
+
             if (_sessionData.HintCount > 0)
             {
                 _sessionData.HintCount--;

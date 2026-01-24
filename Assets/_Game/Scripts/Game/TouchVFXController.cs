@@ -10,6 +10,10 @@ namespace SpotDifferences
 
         public void PlayRightVFX(Vector3 pos) => Instantiate(_touchRightVfxPf, pos, Quaternion.identity);
 
-        public void PlayWrongVFX(Vector3 pos) => Instantiate(_touchWrongVfxPf, pos, Quaternion.identity);
+        public void PlayWrongVFX(Vector3 pos)
+        {
+            return;
+            Instantiate(_touchWrongVfxPf, pos, Quaternion.identity);
+        }
     }
 }
