@@ -1,5 +1,4 @@
 ﻿using NFramework;
-using Redcode.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -38,6 +37,8 @@ public class CameraRotate : MonoBehaviour
         float horizontalDist = new Vector2(offset.x, offset.z).magnitude;
         pitch = Mathf.Atan2(offset.y, horizontalDist) * Mathf.Rad2Deg;
         _isInit = true;
+
+        transform.LookAt(targetMidpoint);
     }
 
     public void ResetCam()
@@ -49,7 +50,6 @@ public class CameraRotate : MonoBehaviour
     void Update()
     {
         if (!_isInit) return;
-        if (UIManager.IsPointerOverUIObject()) return;
 
         Vector2 drag = Vector2.zero;
 
@@ -109,7 +109,7 @@ public class CameraRotate : MonoBehaviour
               Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             Touch t = Input.GetTouch(0);
-            drag = t.deltaPosition * 0.01f; // 🔑 normalize pixels
+            drag = t.deltaPosition * 0.01f;
 
         }
         return drag;
