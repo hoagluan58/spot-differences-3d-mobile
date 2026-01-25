@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.17757809, g: 0.22232267, b: 0.304518, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -66,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -316,12 +314,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!45 &125723314
 Skybox:
   m_ObjectHideFlags: 0
@@ -850,6 +848,7 @@ GameObject:
   - component: {fileID: 573894635}
   - component: {fileID: 573894639}
   - component: {fileID: 573894636}
+  - component: {fileID: 573894640}
   m_Layer: 0
   m_Name: MainGameCamera
   m_TagString: MainCamera
@@ -910,12 +909,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!20 &573894639
 Camera:
   m_ObjectHideFlags: 0
@@ -949,9 +948,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 500
-  field of view: 30
+  field of view: 42.14262
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 31
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -967,6 +966,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &573894640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573894634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337cba76a69f7ab4d86335d6a42721db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 573894639}
+  _adaptAtAwake: 1
+  _adaptContinuity: 1
+  _isOrtho: 1
+  _baseAspectRatio: 1.7777778
+  _baseOrthoSize: 31
+  _baseFov: 30
+  _manualInfos:
+  - aspectRatioRange: {x: 0, y: 1.32}
+    orthoSize: 31
+    pov: 0
+  - aspectRatioRange: {x: 1.3333334, y: 1.5}
+    orthoSize: 42
+    pov: 0
+  - aspectRatioRange: {x: 1.51, y: 3}
+    orthoSize: 31
+    pov: 0
 --- !u!1 &941326787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,12 +1195,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!45 &1233276874
 Skybox:
   m_ObjectHideFlags: 0
@@ -1824,12 +1852,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!45 &1638534687
 Skybox:
   m_ObjectHideFlags: 0
