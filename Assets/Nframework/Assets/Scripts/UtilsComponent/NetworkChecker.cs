@@ -134,6 +134,10 @@ namespace NFramework
         
         private async UniTask<bool> PingIP(string ip)
         {
+#if UNITY_WEBGL
+            // UnityEngine.Ping is not available on WebGL; fall back to HTTP check
+            return await PingURL("https://" + ip);
+#else
             var ping = new Ping(ip);
             float timer = 0f;
 
@@ -150,6 +154,7 @@ namespace NFramework
             }
 
             return false;
+#endif
         }
 
         private async UniTask<bool> PingURL(string url)
