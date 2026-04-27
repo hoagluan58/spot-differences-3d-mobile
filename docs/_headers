@@ -1,0 +1,14 @@
+[
+  {
+    "pathname" : "/",
+    "headers" : {
+      "Cache-Control" : "no-cache"
+    }
+  },
+  {
+    "pathname" : "/Build/*",
+    "headers" : {
+      "Cache-Control" : "public, max-age=31536000, immutable"
+    }
+  }
+]

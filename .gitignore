@@ -97,3 +97,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# WebGL local build output (don't commit raw builds)
+/LocalWebGLBuild/
+
+# Cache data
+/CacheData/
+
+# IDE
+.idea/
