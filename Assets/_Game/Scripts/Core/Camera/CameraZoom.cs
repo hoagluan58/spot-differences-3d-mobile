@@ -22,11 +22,8 @@ namespace SpotDifferences
 
         private void Update()
         {
-#if UNITY_EDITOR || UNITY_STANDALONE
-            HandleMouse();
-#else
             HandleTouch();
-#endif
+            HandleMouse();
         }
 
         public void ResetCam()

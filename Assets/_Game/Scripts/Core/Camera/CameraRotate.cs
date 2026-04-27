@@ -1,4 +1,4 @@
-﻿using NFramework;
+using NFramework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -53,11 +53,11 @@ public class CameraRotate : MonoBehaviour
 
         Vector2 drag = Vector2.zero;
 
-#if UNITY_EDITOR || UNITY_STANDALONE
-        drag = HandleMouse();
-#else
         drag = HandleTouch();
-#endif
+        if (drag.sqrMagnitude < 0.0001f)
+        {
+            drag = HandleMouse();
+        }
 
 
         // Prevent flipping over the top
