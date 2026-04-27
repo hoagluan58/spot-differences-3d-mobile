@@ -50,6 +50,7 @@ namespace SpotDifferences
             {
                 case EToggleType.Vibrate:
                     VibrationManager.I.Status = _isOn;
+                    VibrationManager.I.Haptic(VibrationManager.EHapticType.LightImpact);
                     break;
                 case EToggleType.SFX:
                     SoundManager.SfxStatus = _isOn;
@@ -58,7 +59,6 @@ namespace SpotDifferences
                     SoundManager.BgmStatus = _isOn;
                     break;
             }
-            VibrationManager.I.Haptic(VibrationManager.EHapticType.LightImpact);
         }
     }
 

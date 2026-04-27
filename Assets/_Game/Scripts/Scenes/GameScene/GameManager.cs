@@ -1,7 +1,8 @@
 using NFramework;
-using Sirenix.OdinInspector;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -11,16 +12,23 @@ namespace SpotDifferences
     {
         public static event Action<SessionData> OnSessionDataChanged;
 
-        [SerializeField] private SerializedDictionary<ELevelType, GameObject> _screensDic;
+        [SerializeField] private List<LevelTypeScreenEntry> _screensList;
+        private Dictionary<ELevelType, GameObject> _screensDic;
         [SerializeField] private Transform _rootLevelTf;
         [SerializeField] private CameraRotate _cameraRotate;
         [SerializeField] private CameraZoom _cameraZoom;
 
-        [SerializeField, ReadOnly] private SessionData _sessionData;
+        [SerializeField] private SessionData _sessionData;
 
         private GameLevel _curGameLevel;
         private LevelConfig _curLevelCfg;
         private Coroutine _coroutine;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _screensDic = _screensList.ToDictionary(e => e.Type, e => e.Screen);
+        }
 
         public void StartGame(string level)
         {
@@ -189,6 +197,13 @@ namespace SpotDifferences
                 }
             }
         }
+    }
+
+    [System.Serializable]
+    public class LevelTypeScreenEntry
+    {
+        public ELevelType Type;
+        public GameObject Screen;
     }
 
     [System.Serializable]

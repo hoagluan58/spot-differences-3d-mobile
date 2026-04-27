@@ -826,11 +826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe61bff50687ea469619da07331527b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screensDic:
-    m_Keys: 0100000002000000
-    m_Values:
-    - {fileID: 1585307459}
-    - {fileID: 1942663253}
+  _screensList:
+  - Type: 1
+    Screen: {fileID: 1585307459}
+  - Type: 2
+    Screen: {fileID: 1942663253}
   _rootLevelTf: {fileID: 509139408}
   _cameraRotate: {fileID: 1426786719}
   _cameraZoom: {fileID: 1426786720}
