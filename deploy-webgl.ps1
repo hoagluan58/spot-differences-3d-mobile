@@ -51,9 +51,10 @@ Write-Host "Committing and pushing to GitHub ..." -ForegroundColor Yellow
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm"
 
+$branch = git rev-parse --abbrev-ref HEAD
 git add docs/
 git commit -m "deploy: WebGL build ($timestamp)"
-git push origin main
+git push origin ${branch}:main
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green

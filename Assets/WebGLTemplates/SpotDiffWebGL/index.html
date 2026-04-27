@@ -45,9 +45,9 @@
     }
 
     #unity-canvas {
-      /* Portrait: cap to viewport height, respect 9:16 ratio */
-      width:  min(100vw, calc(100vh * 9 / 16));
-      height: min(100vh, calc(100vw * 16 / 9));
+      /* Landscape: cap to viewport height/width, respect 16:9 ratio */
+      width:  min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
       display: block;
       touch-action: none;
     }
